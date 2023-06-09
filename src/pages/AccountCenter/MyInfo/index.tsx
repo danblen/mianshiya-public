@@ -66,7 +66,7 @@ export const MyInfo: React.FC = () => {
 
   return (
     <HelmetProvider>
-      <Helmet>{user.nickName && <title>{user.nickName}的主页 - 面试鸭</title>}</Helmet>
+      <Helmet>{user.nickName && <title>{user.nickName}的主页 - 在线文档</title>}</Helmet>
       <div>
         <Card loading={loading}>
           <Card.Meta

@@ -1,8 +1,14 @@
 import { MenuDataItem } from '@ant-design/pro-layout';
-import {AimOutlined, BranchesOutlined, CodeOutlined, FieldBinaryOutlined, TagsOutlined} from '@ant-design/icons';
+import {
+  AimOutlined,
+  BranchesOutlined,
+  CodeOutlined,
+  FieldBinaryOutlined,
+  TagsOutlined,
+} from '@ant-design/icons';
 
 /**
- * 题目菜单项
+ * 文档菜单项
  */
 export default [
   {
@@ -32,7 +38,7 @@ export default [
       {
         path: '/tag/算法',
         name: '算法',
-      }
+      },
     ],
   },
   {

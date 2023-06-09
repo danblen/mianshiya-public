@@ -15,7 +15,7 @@ interface QuestionManageBarProps {
 }
 
 /**
- * 题目管理操作栏（仅管理员可用）
+ * 文档管理操作栏（仅管理员可用）
  * @param props
  * @constructor
  * @author liyupi
@@ -24,7 +24,7 @@ const QuestionManageBar: React.FC<QuestionManageBarProps> = (props) => {
   const { question = {} as QuestionType } = props;
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [showRejectModal, setShowRejectModal] = useState<boolean>(false);
-  // 用于修改题目状态后的视图更新
+  // 用于修改文档状态后的视图更新
   const [questionState, setQuestionState] = useState<QuestionType>(question);
   const { initialState } = useModel('@@initialState');
   const { currentUser = {} as CurrentUser } = initialState || {};
@@ -94,7 +94,9 @@ const QuestionManageBar: React.FC<QuestionManageBarProps> = (props) => {
           <Button onClick={() => doPassReview()}>通过</Button>
         )}
         {questionState.reviewStatus !== reviewStatusEnum.REJECT && (
-          <Button danger onClick={() => doRejectReview()}>拒绝</Button>
+          <Button danger onClick={() => doRejectReview()}>
+            拒绝
+          </Button>
         )}
       </Space>
       <QuestionRejectModal

@@ -4,7 +4,7 @@ const db = app.database();
 const _ = db.command;
 
 /**
- * 随机题目
+ * 随机文档
  * @param event
  * @param context
  * @return {Promise<boolean|number>}

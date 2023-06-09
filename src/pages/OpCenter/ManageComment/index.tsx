@@ -42,7 +42,7 @@ const ManageComment: React.FC = () => {
       },
     },
     {
-      title: '题目',
+      title: '文档',
       dataIndex: 'questionId',
       render: (text, record) => {
         const url = `/qd/${record.questionId}`;
@@ -110,7 +110,7 @@ const ManageComment: React.FC = () => {
           return searchComments({
             ...params,
             pageNum: params.current,
-            orderKey: "_createTime",
+            orderKey: '_createTime',
           }).then((res) => {
             return {
               data: res.data,

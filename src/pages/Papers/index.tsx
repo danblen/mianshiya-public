@@ -44,7 +44,7 @@ const formItemLayout = {
 const DEFAULT_PAGE_SIZE = 12;
 
 /**
- * 题目大全页
+ * 文档大全页
  *
  * @param props
  * @constructor

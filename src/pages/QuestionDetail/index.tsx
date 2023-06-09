@@ -17,7 +17,7 @@ import {
 } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { GridContent } from '@ant-design/pro-layout';
-import {history, Link, useAccess, useParams} from 'umi';
+import { history, Link, useAccess, useParams } from 'umi';
 import { getQuestion, favourQuestion, viewQuestion, deleteQuestion } from '@/services/question';
 import type { QuestionType } from '@/models/question';
 import TagList from '@/components/TagList';
@@ -65,7 +65,7 @@ import CommentItem from '@/components/CommentItem';
 import './index.less';
 
 /**
- * 题目详情页
+ * 文档详情页
  * @constructor
  * @author liyupi
  */
@@ -103,7 +103,7 @@ const QuestionDetail: React.FC = () => {
         setUser(tmpUser);
       });
     } else {
-      message.error('题目加载失败，请刷新重试');
+      message.error('文档加载失败，请刷新重试');
     }
     setLoading(false);
     // 浏览量 +1
@@ -181,7 +181,7 @@ const QuestionDetail: React.FC = () => {
     }
   };
 
-  // 遇到题目
+  // 遇到文档
   const doMeet = () => {
     if (!currentUser?._id) {
       toLoginPage();
@@ -192,7 +192,7 @@ const QuestionDetail: React.FC = () => {
   };
 
   /**
-   * 删除题目
+   * 删除文档
    */
   const doDelete = async () => {
     const res = await deleteQuestion(question._id);
@@ -204,7 +204,7 @@ const QuestionDetail: React.FC = () => {
   };
 
   /**
-   * 修改题目
+   * 修改文档
    */
   const toEditPage = () => {
     history.push({
@@ -215,7 +215,7 @@ const QuestionDetail: React.FC = () => {
     });
   };
 
-  // 是否允许编辑题目
+  // 是否允许编辑文档
   const canEdit = access.canAdmin || question.userId === currentUser._id;
 
   const opMenu = (
@@ -293,7 +293,7 @@ const QuestionDetail: React.FC = () => {
 
   return (
     <HelmetProvider>
-      <Helmet>{question && <title>{questionTitle.substring(0, 40)} - 面试鸭</title>}</Helmet>
+      <Helmet>{question && <title>{questionTitle.substring(0, 40)} - 在线文档</title>}</Helmet>
       <GridContent className="question-detail" style={{ overflowX: 'hidden' }}>
         <Row gutter={[24, 24]}>
           <Col xl={16} lg={24} xs={24}>
@@ -373,7 +373,7 @@ const QuestionDetail: React.FC = () => {
             )}
           </Col>
           <Col xl={8} lg={24} xs={24}>
-            <Card title="题目信息" bodyStyle={{ paddingBottom: 8 }}>
+            <Card title="文档信息" bodyStyle={{ paddingBottom: 8 }}>
               <p>浏览数：{(question.viewNum ?? 0) + 1}</p>
               {question.publishTime && (
                 <p>发布时间：{formatPartDateTimeStr(question?.publishTime)}</p>
@@ -414,7 +414,7 @@ const QuestionDetail: React.FC = () => {
               )}
             </Card>
             <div style={{ marginBottom: 24 }} />
-            <Card title="相似题目" bodyStyle={{ paddingTop: 12, paddingBottom: 12 }}>
+            <Card title="相似文档" bodyStyle={{ paddingTop: 12, paddingBottom: 12 }}>
               <SimilarQuestions question={question} />
             </Card>
             <div style={{ marginBottom: 24 }} />

@@ -53,7 +53,7 @@ exports.main = async (event, context) => {
   // 查询消息
   let query = collection.aggregate().match(conditions);
 
-  // 需要查询题目
+  // 需要查询文档
   if (getQuestion) {
     query = query.lookup({
       from: 'question',

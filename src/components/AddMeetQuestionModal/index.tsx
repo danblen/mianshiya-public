@@ -20,7 +20,7 @@ interface AddMeetQuestionModalProps {
 const MAX_TAG_NUM = 5;
 
 /**
- * 添加遇到题目
+ * 添加遇到文档
  *
  * @param props
  * @constructor

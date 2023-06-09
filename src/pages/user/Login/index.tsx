@@ -40,7 +40,7 @@ const Login: React.FC = () => {
 
   return (
     <div className={styles.main}>
-      <ProForm
+      {/* <ProForm
         isKeyPressSubmit
         submitter={{
           render: (_, dom) => dom.pop(),
@@ -57,11 +57,11 @@ const Login: React.FC = () => {
         }}
       >
         <Tabs activeKey={type} onChange={setType} centered>
-          <Tabs.TabPane key="scan" tab="微信扫码关注『 面试鸭 』登录" />
+          <Tabs.TabPane key="scan" tab="微信扫码关注『 在线文档 』登录" />
         </Tabs>
         {type === 'scan' && (
           <>
-            <img src={QR_CODE} className={styles.qrcode} alt="关注公众号『 面试鸭 』登录" />
+            <img src={QR_CODE} className={styles.qrcode} alt="关注公众号『 在线文档 』登录" />
             <ProFormText
               fieldProps={{
                 size: 'large',
@@ -89,7 +89,7 @@ const Login: React.FC = () => {
             />
           </>
         )}
-      </ProForm>
+      </ProForm> */}
     </div>
   );
 };

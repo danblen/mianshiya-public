@@ -48,7 +48,7 @@ exports.main = async (event, context) => {
   // 查询消息
   let query = collection.aggregate().match(conditions);
 
-  // 需要查询题目
+  // 需要查询文档
   if (getQuestion) {
     query = query.lookup({
       from: 'question',
@@ -137,9 +137,9 @@ exports.main = async (event, context) => {
     // { "1": {id: 1, nickName: 鱼皮}, "2": {id: 2, nickName: 鱼皮狗}}
     const userIdInfoMap = {};
     userList &&
-    userList.forEach((user) => {
-      userIdInfoMap[user._id] = user;
-    });
+      userList.forEach((user) => {
+        userIdInfoMap[user._id] = user;
+      });
     data.forEach((comment) => {
       comment.userInfo = [userIdInfoMap[comment.userId]];
       if (comment.replyList && comment.replyList.length > 0) {

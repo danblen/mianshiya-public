@@ -9,7 +9,7 @@ const xss = require('xss');
 const cheerio = require('cheerio');
 
 /**
- * 创建题目
+ * 创建文档
  * @param event
  * @param context
  * @return {Promise<*|boolean>}
@@ -19,12 +19,12 @@ exports.main = async (event, context) => {
   if (!detail || !tags || tags.length < 1 || difficulty < 0 || type < 0) {
     return false;
   }
-  // 校验题目详情，如果不包含任何文本，直接返回
+  // 校验文档详情，如果不包含任何文本，直接返回
   if (!cheerio.load(detail).text().trim()) {
     return false;
   }
   detail = xss(detail);
-  // 校验题目解析，
+  // 校验文档解析，
   if (reference !== undefined) {
     // 如果不包含任何文本，直接返回
     if (!cheerio.load(reference).text().trim()) {
@@ -50,7 +50,7 @@ exports.main = async (event, context) => {
     return false;
   }
 
-  // 同一用户每天只能上传 100 道题目
+  // 同一用户每天只能上传 100 道文档
   const yesterday = new Date(new Date().getTime() - 24 * 60 * 60 * 1000);
   const condition = {
     userId: currentUser._id,

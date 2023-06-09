@@ -22,7 +22,7 @@ export default [
   },
   {
     path: '/questions',
-    name: '题目',
+    name: '文档',
     icon: <FileOutlined />,
     children: questionMenu,
   },
@@ -48,7 +48,7 @@ export default [
         icon: <StarOutlined />,
       },
       {
-        name: '我的题目',
+        name: '我的文档',
         path: '/account/question',
         icon: <FileOutlined />,
       },

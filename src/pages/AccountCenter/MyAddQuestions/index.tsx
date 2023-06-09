@@ -18,7 +18,7 @@ const DEFAULT_PAGE_PARAMS = {
 };
 
 /**
- * 我的题目页
+ * 我的文档页
  *
  * @author liyupi
  */
@@ -81,7 +81,7 @@ const MyAddQuestions: React.FC = () => {
           setSearchParams(params);
         }}
       >
-        <ProFormSelect name="reviewStatus" placeholder="题目状态" valueEnum={REVIEW_STATUS_MAP} />
+        <ProFormSelect name="reviewStatus" placeholder="文档状态" valueEnum={REVIEW_STATUS_MAP} />
         <ProFormSelect name="type" placeholder="题型" valueEnum={QUESTION_TYPE_ENUM} />
         <ProFormSelect name="difficulty" placeholder="难度" valueEnum={QUESTION_DIFFICULTY_ENUM} />
       </LightFilter>
@@ -117,10 +117,10 @@ const MyAddQuestions: React.FC = () => {
         }}
         locale={{
           emptyText: (
-            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="您还没有上传过题目哦">
+            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="您还没有上传过文档哦">
               <Link to="/addQuestion">
                 <Button type="primary" size="large">
-                  上传题目
+                  上传文档
                 </Button>
               </Link>
             </Empty>

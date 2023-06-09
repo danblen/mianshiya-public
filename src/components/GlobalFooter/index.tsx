@@ -6,13 +6,13 @@ import React from 'react';
 const GlobalFooter: React.FC = () => {
   return (
     <DefaultFooter
-      copyright="2021 面试鸭 | 沪ICP备19026706号-3"
+      copyright="2021 在线文档 | 沪ICP备19026706号-3"
       links={[
         {
           key: 'github',
           title: (
             <Tooltip title="欢迎提出建议和 Bug 反馈">
-              <BugOutlined />  产品反馈
+              <BugOutlined /> 产品反馈
             </Tooltip>
           ),
           href: 'https://support.qq.com/products/370820?',
@@ -21,7 +21,7 @@ const GlobalFooter: React.FC = () => {
         {
           key: 'info',
           title: (
-            <Tooltip title="本站所有题目均来源于网络，仅供学习参考，如有侵权，非常抱歉，请立即联系作者删除">
+            <Tooltip title="本站所有文档均来源于网络，仅供学习参考，如有侵权，非常抱歉，请立即联系作者删除">
               <InfoCircleOutlined /> 免责声明
             </Tooltip>
           ),

@@ -1,5 +1,5 @@
 /**
- * 题目类型
+ * 文档类型
  */
 export interface QuestionType {
   _id: string;
@@ -18,7 +18,7 @@ export interface QuestionType {
   reference?: string;
   priority?: number;
   referenceCommentId?: string;
-  params?: {options: string[], answer: string | string[]};
+  params?: { options: string[]; answer: string | string[] };
   reviewTime?: Date;
   reviewerId?: string;
   reviewStatus: number;

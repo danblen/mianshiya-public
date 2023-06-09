@@ -5,7 +5,7 @@ const app = cloud.init({
 });
 
 /**
- * 搜索题目（ES）
+ * 搜索文档（ES）
  * @param event
  * @param context
  * @return {Promise<boolean|number>}
@@ -145,7 +145,7 @@ exports.main = async (event, context) => {
     });
   }
 
-  // 查询至少包含一个标签的题目
+  // 查询至少包含一个标签的文档
   if (orTags && orTags.length > 0) {
     queryData.query.bool.filter.push({
       terms: {

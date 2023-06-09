@@ -75,7 +75,7 @@ const AddPaper: React.FC = () => {
       form.setFieldsValue(res);
       setPickedQuestions(res.questions);
     } else {
-      message.error('题目加载失败，请刷新重试');
+      message.error('文档加载失败，请刷新重试');
     }
     setLoading(false);
   };
@@ -111,7 +111,7 @@ const AddPaper: React.FC = () => {
     };
     if (paperCount < 3) {
       setLoading(false);
-      message.error('题目数量需要大于3道！');
+      message.error('文档数量需要大于3道！');
       return;
     }
 
@@ -174,7 +174,7 @@ const AddPaper: React.FC = () => {
       <div className="steps">
         <Steps current={step} onChange={changeStep}>
           <Step title="试卷信息" />
-          <Step title="选择题目" />
+          <Step title="选择文档" />
           <Step title="浏览试卷" />
           <Step title="完成" />
         </Steps>

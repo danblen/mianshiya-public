@@ -7,7 +7,7 @@ const db = app.database();
 const _ = db.command;
 
 /**
- * 创建遇到题目
+ * 创建遇到文档
  * @param event
  * @param context
  * @return {Promise<*|boolean>}
@@ -53,7 +53,7 @@ exports.main = async (event, context) => {
         console.log('addMeetQuestion succeed', res);
         return res.id;
       });
-    // 题目遇到数 +1
+    // 文档遇到数 +1
     await updateQuestionMeetQuestionNum(transaction, questionId, 1);
     await transaction.commit();
     return id;
@@ -65,7 +65,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 更新题目遇到题目数
+ * 更新文档遇到文档数
  * @param transaction
  * @param questionId
  * @param num

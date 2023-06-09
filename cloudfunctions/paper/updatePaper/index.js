@@ -39,7 +39,7 @@ exports.main = async (event, context) => {
     return false;
   }
 
-  // 仅题目所有者和管理员可更新
+  // 仅文档所有者和管理员可更新
   const originPaper = await db
     .collection('paper')
     .where({

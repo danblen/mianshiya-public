@@ -1,7 +1,7 @@
 {
   "name": "listRecommendQuestions",
   "version": "1.0.0",
-  "description": "获取推荐题目列表",
+  "description": "获取推荐文档列表",
   "main": "index.js",
   "scripts": {},
   "author": "",

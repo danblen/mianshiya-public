@@ -84,7 +84,7 @@ const submitFormLayout = {
 };
 
 /**
- * 题目管理
+ * 文档管理
  *
  * @constructor
  */
@@ -230,7 +230,7 @@ const ManageQuestion: React.FC = () => {
     setShowRejectModal(true);
   };
 
-  // 题目类型选项组
+  // 文档类型选项组
   const typeRadioGroupOptions = Object.keys(QUESTION_TYPE_ENUM).map((key) => {
     return {
       label: QUESTION_TYPE_ENUM[key],
@@ -254,7 +254,7 @@ const ManageQuestion: React.FC = () => {
         setSearchParams({ ...searchParams, ...values, pageNum: 1 });
       }}
     >
-      <ProFormText name="name" label="题目名" />
+      <ProFormText name="name" label="文档名" />
       <ProFormSelect name="reviewStatus" label="审核状态" valueEnum={REVIEW_STATUS_MAP} />
       <ProFormText name="userId" label="用户id" />
       {access.canAdmin && (
@@ -272,7 +272,7 @@ const ManageQuestion: React.FC = () => {
     <>
       <Row gutter={[24, 24]}>
         <Col md={5} xs={24}>
-          <Card title="题目列表（点右边筛选）" extra={questionFilter}>
+          <Card title="文档列表（点右边筛选）" extra={questionFilter}>
             <List<QuestionType>
               rowKey="_id"
               loading={loading}
@@ -304,7 +304,7 @@ const ManageQuestion: React.FC = () => {
                           style={{ color: reviewStatusInfo.color }}
                           onClick={() => setQuestionId(item._id)}
                         >
-                          {'题目：' + getQuestionTitle(item)}
+                          {'文档：' + getQuestionTitle(item)}
                         </a>
                       }
                       description={formatPartDateTimeStr(item._createTime)}
@@ -317,7 +317,7 @@ const ManageQuestion: React.FC = () => {
         </Col>
         <Col md={13} xs={24}>
           <Card
-            title="题目信息 / 修改"
+            title="文档信息 / 修改"
             key={questionId}
             extra={
               currQuestion && (
@@ -348,7 +348,7 @@ const ManageQuestion: React.FC = () => {
                 rules={[
                   {
                     required: true,
-                    message: '请选择题目类型',
+                    message: '请选择文档类型',
                   },
                 ]}
               >
@@ -360,7 +360,7 @@ const ManageQuestion: React.FC = () => {
                 rules={[
                   {
                     required: true,
-                    message: '请选择题目难度',
+                    message: '请选择文档难度',
                   },
                 ]}
               >
@@ -396,18 +396,18 @@ const ManageQuestion: React.FC = () => {
                 />
               </FormItem>
               <FormItem
-                label="题目"
+                label="文档"
                 name="detail"
                 rules={[
                   {
                     required: true,
-                    message: '请完善题目',
+                    message: '请完善文档',
                   },
                 ]}
               >
                 {/* @ts-ignore */}
                 <RichTextEditor
-                  placeholder="请输入题目内容，尽量准确清晰，不用刻意加粗"
+                  placeholder="请输入文档内容，尽量准确清晰，不用刻意加粗"
                   onBlur={(_, __, editor) => {
                     // 相似检测
                     doSimilarSearch(editor.getText());
@@ -415,12 +415,12 @@ const ManageQuestion: React.FC = () => {
                 />
               </FormItem>
               {formValue.type === 1 ? (
-                <FormItem label="题目选项" name="params">
+                <FormItem label="文档选项" name="params">
                   <AddSingleOptions />
                 </FormItem>
               ) : null}
               {formValue.type === 2 ? (
-                <FormItem label="题目选项" name="params">
+                <FormItem label="文档选项" name="params">
                   <AddMultipleOptions />
                 </FormItem>
               ) : null}
@@ -429,7 +429,7 @@ const ManageQuestion: React.FC = () => {
                 <RichTextEditor placeholder="请输入参考题解，可不填" />
               </FormItem>
               <FormItem label="标题备注" name="name">
-                <Input placeholder="建议用题目考察要点命名，可不填" maxLength={100} allowClear />
+                <Input placeholder="建议用文档考察要点命名，可不填" maxLength={100} allowClear />
               </FormItem>
               <FormItem label="优先级" name="priority">
                 <InputNumber min={0} placeholder="999 表示加精" />
@@ -485,7 +485,7 @@ const ManageQuestion: React.FC = () => {
           </Card>
         </Col>
         <Col md={6} xs={24}>
-          <Card title="题目信息" bodyStyle={{ paddingBottom: 12 }}>
+          <Card title="文档信息" bodyStyle={{ paddingBottom: 12 }}>
             {currQuestion ? (
               <Descriptions column={1}>
                 <Descriptions.Item label="推荐人">
@@ -510,14 +510,18 @@ const ManageQuestion: React.FC = () => {
                 <Descriptions.Item label="审核信息">{currQuestion.reviewMessage}</Descriptions.Item>
               </Descriptions>
             ) : (
-              '请在最左侧列表点击题目'
+              '请在最左侧列表点击文档'
             )}
           </Card>
-          <Card title="相似题目（请勿重复上传）" style={{ marginTop: 24 }} bodyStyle={{ paddingTop: 12 }}>
+          <Card
+            title="相似文档（请勿重复上传）"
+            style={{ marginTop: 24 }}
+            bodyStyle={{ paddingTop: 12 }}
+          >
             {similarSearchParams?.name?.trim() ? (
               <QuestionList searchParams={similarSearchParams} />
             ) : (
-              <div>输入题目后将自动检测</div>
+              <div>输入文档后将自动检测</div>
             )}
           </Card>
         </Col>

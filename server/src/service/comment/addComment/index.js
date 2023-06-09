@@ -4,10 +4,7 @@ const _ = db.command;
 const xss = require('xss');
 const cheerio = require('cheerio');
 const { getLoginUser } = require('../../user/userService');
-const {
-  getQuestionTitle,
-  getQuestionCommentDetailLink,
-} = require('../../../utils/bUtils');
+const { getQuestionTitle, getQuestionCommentDetailLink } = require('../../../utils/bUtils');
 const { getQuestion } = require('../../question/questionService');
 const addMessage = require('../../message/addMessage').main;
 
@@ -32,7 +29,7 @@ exports.main = async (event, context) => {
   // 获取当前登录用户
   const currentUser = await getLoginUser(context);
 
-  // 判断题目是否存在
+  // 判断文档是否存在
   const question = await getQuestion(questionId);
   if (!question) {
     return false;
@@ -70,7 +67,7 @@ exports.main = async (event, context) => {
         console.log('addComment succeed', res);
         return res.id;
       });
-    // 题目评论数 +1
+    // 文档评论数 +1
     await updateQuestionCommentNum(transaction, questionId, 1);
     await transaction.commit();
     // 异步通知被回答的人
@@ -80,7 +77,7 @@ exports.main = async (event, context) => {
     addMessage(
       {
         toUserId: question.userId,
-        title: `${currentUser.nickName} 回答了 <a href="${questionCommentDetailLink}" target="_blank">我的题目：${questionTitle}</a>`,
+        title: `${currentUser.nickName} 回答了 <a href="${questionCommentDetailLink}" target="_blank">我的文档：${questionTitle}</a>`,
         content: textContent.substring(0, 200),
         mailContent: `${content} <p><a href="${questionCommentDetailLinkFull}" target="_blank">点击查看详情</a></p>`,
       },
@@ -95,7 +92,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 更新题目回答数
+ * 更新文档回答数
  * @param transaction
  * @param questionId
  * @param num

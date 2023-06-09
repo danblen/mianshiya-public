@@ -8,7 +8,7 @@ const collection = db.collection('question');
 const _ = db.command;
 
 /**
- * 定期同步数据库的题目到 ES（每分钟）
+ * 定期同步数据库的文档到 ES（每分钟）
  * @param event
  * @param context
  * @author liyupi
@@ -19,7 +19,7 @@ exports.main = async (event, context) => {
   const condition = {
     _updateTime: _.gte(maxTime),
   };
-  // 查询数据库题目数据总数
+  // 查询数据库文档数据总数
   const total = await collection
     .where(condition)
     .count()

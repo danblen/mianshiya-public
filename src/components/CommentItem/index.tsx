@@ -186,7 +186,7 @@ const CommentItem: React.FC<CommentItemProps> = (props) => {
               {questionTitle}
             </Link>
           ) : (
-            '题目已删除'
+            '文档已删除'
           )}
         </Typography.Title>
       )}

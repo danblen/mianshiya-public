@@ -62,7 +62,7 @@ exports.main = async (event, context) => {
         console.log('addComment succeed', res);
         return res.id;
       });
-    // 题目评论数 +1
+    // 文档评论数 +1
     await updateQuestionCommentNum(transaction, questionId, 1);
     await transaction.commit();
     return id;
@@ -74,7 +74,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 更新题目回答数
+ * 更新文档回答数
  * @param transaction
  * @param questionId
  * @param num

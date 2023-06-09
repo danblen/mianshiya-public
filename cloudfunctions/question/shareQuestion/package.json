@@ -1,7 +1,7 @@
 {
   "name": "shareQuestion",
   "version": "1.0.0",
-  "description": "添加题目分享数",
+  "description": "添加文档分享数",
   "main": "index.js",
   "scripts": {},
   "author": "",

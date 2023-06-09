@@ -82,11 +82,11 @@ const Index: React.FC = () => {
     setList(data);
   };
 
-  useEffect(() => {
-    loadData();
-    // eslint-disable-next-line no-restricted-globals
-    window.scrollTo(0, 0);
-  }, [activeKey, order]);
+  // useEffect(() => {
+  //   loadData();
+  //   // eslint-disable-next-line no-restricted-globals
+  //   window.scrollTo(0, 0);
+  // }, [activeKey, order]);
 
   // 仅触发一次
   useEffect(() => {
@@ -168,26 +168,26 @@ const Index: React.FC = () => {
           {
             element: '.ant-avatar',
             intro: '登陆后你可以在个人中心修改头像昵称等信息',
-            title: 'welcome to 面试鸭！🎉',
+            title: 'welcome to 在线文档！🎉',
           },
           {
             element: '.uploadDropdown',
-            intro: '你可以在这里上传面试题目获得积分，也可以创建试卷',
+            intro: '你可以在这里上传文档文档获得积分，也可以创建试卷',
             title: '开源万岁！✨',
           },
           {
             element: '.set-labels',
-            intro: '设置兴趣标签，以便让我们给你推荐感兴趣的题目和试卷',
+            intro: '设置兴趣标签，以便让我们给你推荐感兴趣的文档和试卷',
             title: '让我们更了解你🧐',
           },
           {
             element: '.pickQuestion666',
-            intro: '点击将题目加入试题篮，后续可以组卷下载等操作',
-            title: '遇到感兴趣的题目？😍',
+            intro: '点击将文档加入试题篮，后续可以组卷下载等操作',
+            title: '遇到感兴趣的文档？😍',
           },
           {
             element: '.affix',
-            intro: '你可以在试题篮查看挑选的题目，并进入组卷页面',
+            intro: '你可以在试题篮查看挑选的文档，并进入组卷页面',
             title: '组卷达人📃',
           },
         ]}
@@ -246,10 +246,10 @@ const Index: React.FC = () => {
               )}
               locale={{
                 emptyText: (
-                  <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无题目">
+                  <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无文档">
                     <Link to="/addQuestion" target="_blank">
                       <Button type="primary" size="large">
-                        上传题目
+                        上传文档
                       </Button>
                     </Link>
                   </Empty>
@@ -264,7 +264,11 @@ const Index: React.FC = () => {
             message={
               <>
                 本站禁止任何测试行为，违者永久封号！
-                <a href="https://docs.qq.com/sheet/DUGRYSlJMSm9Wb3lx" target="_blank" rel="noreferrer">
+                <a
+                  href="https://docs.qq.com/sheet/DUGRYSlJMSm9Wb3lx"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   小黑屋
                 </a>
               </>
@@ -280,7 +284,7 @@ const Index: React.FC = () => {
               }
               description={
                 <div>
-                  致力于收集面试题目与题解，提供一站式面试备战交流服务，助你成为面试达人！
+                  致力于收集文档文档与题解，提供一站式文档备战交流服务，助你成为文档达人！
                   <a href="https://t.1yb.co/yO1G" target="_blank" rel="noreferrer">
                     站长鱼皮，腾讯全栈开发者。
                   </a>

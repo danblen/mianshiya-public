@@ -12,7 +12,7 @@ interface QuestionRejectModalProps {
 }
 
 /**
- * 题目拒绝模态框
+ * 文档拒绝模态框
  * @param props
  * @constructor
  */
@@ -55,9 +55,9 @@ const QuestionRejectModal: React.FC<QuestionRejectModalProps> = (props) => {
     >
       <AutoComplete
         options={[
-          { value: '已有相同题目' },
-          { value: '题目信息不完整' },
-          { value: '题目标签不正确' },
+          { value: '已有相同文档' },
+          { value: '文档信息不完整' },
+          { value: '文档标签不正确' },
           { value: '涉嫌引流，请联系微信 code_nav' },
         ]}
         style={{ width: '100%' }}

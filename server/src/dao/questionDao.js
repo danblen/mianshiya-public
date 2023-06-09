@@ -1,9 +1,9 @@
-const app = require("../app");
+const app = require('../app');
 const db = app.database();
 const _ = db.command;
 
 /**
- * 更新题目回答数
+ * 更新文档回答数
  * @param transaction
  * @param questionId
  * @param num

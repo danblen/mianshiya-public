@@ -31,7 +31,7 @@ const expandedRowRender = (onSortChange, deletePickedQuestions) => (row) => {
             // render: (_, record) => <></>,
           },
           {
-            title: '题目',
+            title: '文档',
             dataIndex: 'name',
             key: 'name',
             width: 240,

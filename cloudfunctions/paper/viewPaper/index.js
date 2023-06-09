@@ -7,7 +7,7 @@ const db = app.database();
 const _ = db.command;
 
 /**
- * 浏览题目
+ * 浏览文档
  * @param event
  * @param context
  * @return {Promise<boolean|*>}

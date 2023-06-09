@@ -8,7 +8,7 @@ export interface CommentSearchParams extends PageSearchParams {
   questionId?: string;
   content?: string;
   reviewStatus?: number;
-  getQuestion?: boolean; // 是否获取题目信息
+  getQuestion?: boolean; // 是否获取文档信息
   getReplyList?: boolean; // 是否获取回复列表信息
 }
 

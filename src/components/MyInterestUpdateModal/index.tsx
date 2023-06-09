@@ -36,7 +36,7 @@ const MyInterestUpdateModal: React.FC<MyInterestUpdateModalProps> = (props) => {
   const [submitting, setSubmitting] = useState<boolean>(false);
   const { initialState, setInitialState } = useModel('@@initialState');
   const { currentUser = {} as CurrentUser } = initialState || {};
-  const { tagsMap } = useModel('tag');
+  // const { tagsMap } = useModel('tag');
 
   useEffect(() => {
     if (visible) {
@@ -100,11 +100,11 @@ const MyInterestUpdateModal: React.FC<MyInterestUpdateModalProps> = (props) => {
             },
           ]}
         >
-          <SelectTags
+          {/* <SelectTags
             allTags={tagsMap.allTags}
             groupTags={tagsMap.groupTags}
             maxTagsNumber={MAX_INTERESTS_NUM}
-          />
+          /> */}
         </FormItem>
         <FormItem
           style={{

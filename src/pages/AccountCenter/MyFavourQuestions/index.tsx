@@ -97,10 +97,10 @@ const MyFavourQuestions: React.FC = () => {
         }}
         locale={{
           emptyText: (
-            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="您还没有收藏的题目哦">
+            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="您还没有收藏的文档哦">
               <Link to="/recommend">
                 <Button type="primary" size="large">
-                  探索题目
+                  探索文档
                 </Button>
               </Link>
             </Empty>

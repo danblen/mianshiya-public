@@ -36,7 +36,7 @@ const ManageReply: React.FC = () => {
       hideInSearch: true,
     },
     {
-      title: '题目',
+      title: '文档',
       dataIndex: 'questionId',
       copyable: true,
       ellipsis: true,

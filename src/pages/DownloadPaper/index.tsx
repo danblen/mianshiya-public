@@ -66,7 +66,7 @@ const DownloadPaper: React.FC = () => {
     //   const pdfWidth = pdf.internal.pageSize.getWidth();
     //   const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
     //   pdf.addImage(dataUrl, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'NONE');
-    //   pdf.save(`${paperName}——面试鸭.pdf`);
+    //   pdf.save(`${paperName}——在线文档.pdf`);
     //   Modal.success({
     //     title: '下载成功！',
     //     content: '如果没有开始下载，可在页面右上角尝试重新下载',
@@ -97,7 +97,7 @@ const DownloadPaper: React.FC = () => {
       setPaper(res);
       setTimeout(() => toPdf(), 0);
     } else {
-      message.error('题目加载失败，请刷新重试');
+      message.error('文档加载失败，请刷新重试');
     }
     setLoading(false);
   };

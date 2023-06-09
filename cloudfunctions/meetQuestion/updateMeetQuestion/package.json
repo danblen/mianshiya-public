@@ -1,7 +1,7 @@
 {
   "name": "updateMeetQuestion",
   "version": "1.0.0",
-  "description": "更新遇到题目",
+  "description": "更新遇到文档",
   "main": "index.js",
   "scripts": {},
   "author": "",

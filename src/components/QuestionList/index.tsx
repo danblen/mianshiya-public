@@ -17,7 +17,7 @@ const DEFAULT_PAGE_PARAMS = {
 };
 
 /**
- * 题目列表组件
+ * 文档列表组件
  * @constructor
  * @author yupi
  */
@@ -38,12 +38,12 @@ const QuestionList: React.FC<QuestionListProps> = (props) => {
       setList(res.data);
       setTotal(res.total);
     } else {
-      message.error('查询相似题目列表失败');
+      message.error('查询相似文档列表失败');
     }
     setLoading(false);
   };
 
-  // 修改题目
+  // 修改文档
   useEffect(() => {
     loadData();
   }, [searchParams, pageSearchParams]);
@@ -69,7 +69,7 @@ const QuestionList: React.FC<QuestionListProps> = (props) => {
         },
       }}
       locale={{
-        emptyText: <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无题目" />,
+        emptyText: <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无文档" />,
       }}
     />
   );

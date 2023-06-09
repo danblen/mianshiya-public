@@ -56,11 +56,11 @@ exports.main = async (event, context) => {
 
     // 其他状态转通过
     if (comment.reviewStatus !== 1 && reviewStatus === 1) {
-      // 题目评论数 + 1
+      // 文档评论数 + 1
       await updateQuestionCommentNum(transaction, questionId, 1);
     } else if (comment.reviewStatus === 1) {
       // 通过改为其他状态
-      // 题目评论数 -1
+      // 文档评论数 -1
       await updateQuestionCommentNum(transaction, questionId, -1);
     }
     await transaction.commit();

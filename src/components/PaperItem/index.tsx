@@ -19,19 +19,14 @@ interface PaperItemProps {
 }
 
 /**
- * 单个题目展示
+ * 单个文档展示
  *
  * @param props
  * @constructor
  * @author liyupi
  */
 const PaperItem: React.FC<PaperItemProps> = (props) => {
-  const {
-    paper = {} as PaperType,
-    showEdit,
-    onReload,
-    horizontal = false,
-  } = props;
+  const { paper = {} as PaperType, showEdit, onReload, horizontal = false } = props;
 
   const doEdit = () => {
     history.push({

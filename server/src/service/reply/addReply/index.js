@@ -28,7 +28,7 @@ exports.main = async (event, context) => {
   // 获取当前登录用户
   const currentUser = await getLoginUser(context);
 
-  // 判断题目是否存在
+  // 判断文档是否存在
   const question = await getQuestion(questionId);
   if (!question) {
     return false;

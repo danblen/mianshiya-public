@@ -20,9 +20,9 @@ export interface QuestionSearchParams extends PageSearchParams {
 }
 
 /**
- * 添加题目
+ * 添加文档
  * @param params
- * @return 题目 id
+ * @return 文档 id
  */
 export function addQuestion(params: QuestionType) {
   if (!params.userId || !params.tags || params.tags.length < 1) {
@@ -42,7 +42,7 @@ export function addQuestion(params: QuestionType) {
 }
 
 /**
- * 从 ES 搜索题目
+ * 从 ES 搜索文档
  * @param params
  */
 export async function searchQuestions(
@@ -69,7 +69,7 @@ export async function searchQuestions(
 }
 
 /**
- * 分页搜索题目（直接调云数据库）
+ * 分页搜索文档（直接调云数据库）
  * @param params
  */
 export async function searchQuestionsByPage(
@@ -96,7 +96,7 @@ export async function searchQuestionsByPage(
 }
 
 /**
- * 分页获取用户收藏的题目列表
+ * 分页获取用户收藏的文档列表
  * @param currentUser
  * @param params
  */
@@ -144,7 +144,7 @@ export function shareQuestion(questionId: string) {
 }
 
 /**
- * 删除题目
+ * 删除文档
  * @param questionId
  */
 export function deleteQuestion(questionId: string) {
@@ -191,7 +191,7 @@ export function favourQuestion(questionId: string) {
 }
 
 /**
- * 根据用户兴趣获取推荐题目
+ * 根据用户兴趣获取推荐文档
  * @param size
  */
 export function listRecommendQuestions(size: number = 12) {
@@ -210,7 +210,7 @@ export function listRecommendQuestions(size: number = 12) {
 }
 
 /**
- * 修改题目
+ * 修改文档
  * @param questionId
  * @param question
  */
@@ -235,7 +235,7 @@ export async function updateQuestion(questionId: string, question: Partial<Quest
 }
 
 /**
- * 根据 id 获取题目
+ * 根据 id 获取文档
  * @param questionId
  */
 export function getQuestion(questionId: string) {
@@ -258,7 +258,7 @@ export function getQuestion(questionId: string) {
 }
 
 /**
- * 审核题目
+ * 审核文档
  * @param questionId
  * @param score
  * @param reviewStatus
@@ -292,7 +292,7 @@ export async function reviewQuestion(
 }
 
 /**
- * 浏览题目
+ * 浏览文档
  * @param questionId
  */
 export async function viewQuestion(questionId: string) {

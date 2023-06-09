@@ -5,7 +5,7 @@ const db = app.database();
 const _ = db.command;
 
 /**
- * 收藏题目（取消收藏）
+ * 收藏文档（取消收藏）
  * @param event
  * @param context
  * @return {Promise<number>} 收藏数变化
@@ -57,7 +57,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 更新题目收藏数
+ * 更新文档收藏数
  * @param transaction
  * @param questionId
  * @param num

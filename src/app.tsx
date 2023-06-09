@@ -18,7 +18,13 @@ export async function getInitialState(): Promise<{
   currentUser?: CurrentUser;
   fetchUserInfo?: () => Promise<CurrentUser | undefined>;
 }> {
-  const currentUser = await getCurrentUser();
+  const currentUser = {
+    code: 200,
+    data: {},
+    message: 'ok',
+    lastLoginTime:''
+  };
+  // const currentUser = await getCurrentUser();
   if (currentUser) {
     localStorage.setItem('lastLoginTime', currentUser.lastLoginTime);
   }

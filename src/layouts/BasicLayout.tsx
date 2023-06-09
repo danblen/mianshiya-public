@@ -45,7 +45,7 @@ const menuDataRender = (menuList: MenuDataItem[], access: AccessType): MenuDataI
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   const { children } = props;
 
-  const { fetchTagsMap } = useModel('tag');
+  // const { fetchTagsMap } = useModel('tag');
   const access = useAccess();
   const location = useLocation();
   const { initialState, setInitialState } = useModel('@@initialState');
@@ -72,7 +72,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
 
   useEffect(() => {
     autoLogin();
-    fetchTagsMap();
+    // fetchTagsMap();
   }, []);
 
   // 被永久封号（不显示封号提示，制造错觉）
@@ -84,7 +84,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
     <HelmetProvider>
       <InspectorWrapper keys={['control', 'shift', 'command', 'c']} disableLaunchEditor={false}>
         <Helmet>
-          <title>面试鸭 - {SLOGAN}</title>
+          <title>在线文档 - {SLOGAN}</title>
         </Helmet>
         <ProLayout
           className="basic-layout"
@@ -100,8 +100,8 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
                 title="拖拽Logo到收藏栏，刷题更方便！"
               >
                 <span>
-                  <a href="https://www.mianshiya.com/" title="面试鸭">
-                    <img src={SYSTEM_LOGO} alt="面试鸭" title="面试鸭" />
+                  <a href="https://www.mianshiya.com/" title="在线文档">
+                    <img src={SYSTEM_LOGO} alt="在线文档" title="在线文档" />
                   </a>
                 </span>
               </Popover>

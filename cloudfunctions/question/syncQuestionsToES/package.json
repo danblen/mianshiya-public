@@ -1,7 +1,7 @@
 {
   "name": "addQuestionsToES",
   "version": "1.0.0",
-  "description": "首次同步数据库的题目到 ES",
+  "description": "首次同步数据库的文档到 ES",
   "main": "index.js",
   "scripts": {},
   "author": "",

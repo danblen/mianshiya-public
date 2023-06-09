@@ -9,7 +9,7 @@ const db = app.database();
 const ADD_SCORE = 5;
 
 /**
- * 审核题目
+ * 审核文档
  * @param event
  * @param context
  * @return {Promise<boolean|number>}
@@ -38,7 +38,7 @@ exports.main = async (event, context) => {
     return false;
   }
 
-  // 原题目
+  // 原文档
   const originQuestion = await db
     .collection('question')
     .where({
@@ -58,7 +58,7 @@ exports.main = async (event, context) => {
   if (currentUser.authority && currentUser.authority.includes('admin')) {
     canOp = true;
   }
-  // 如果是题目的创建者，可操作
+  // 如果是文档的创建者，可操作
   if (originQuestion.userId === currentUser._id) {
     canOp = true;
   }
@@ -112,12 +112,12 @@ exports.main = async (event, context) => {
     }
     // 消息通知
     if (reviewStatus === 1) {
-      await addMessage(userId, '题目审核通过', `您推荐的题目【${originQuestion.name}】已通过审核`);
+      await addMessage(userId, '文档审核通过', `您推荐的文档【${originQuestion.name}】已通过审核`);
     } else if (reviewStatus === 2) {
       await addMessage(
         userId,
-        '题目审核拒绝',
-        `您推荐的题目【${originQuestion.name}】未通过审核，拒绝原因：${
+        '文档审核拒绝',
+        `您推荐的文档【${originQuestion.name}】未通过审核，拒绝原因：${
           reviewMessage ? reviewMessage : '无'
         }`,
       );
@@ -132,7 +132,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 修改题目
+ * 修改文档
  * @param transaction
  * @param reviewerId
  * @param questionId

@@ -3,7 +3,7 @@ import type { QuestionType } from './question';
 
 export interface editPaperModelState {
   pickedQuestions: pickedQuestionsType;
-  // 本地缓存用户选择的题目
+  // 本地缓存用户选择的文档
 }
 
 export interface editPaperModelType {

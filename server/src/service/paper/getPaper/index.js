@@ -53,7 +53,7 @@ exports.main = async (event, context) => {
       return null;
     }
   }
-  // 为试卷填充题目
+  // 为试卷填充文档
   const questionIdList = getQuestionIdList(paper.questions);
   const allQuestions = await db
     .collection('question')
@@ -70,7 +70,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 从试卷的题目字段中拼接题目 id 列表
+ * 从试卷的文档字段中拼接文档 id 列表
  * @param questions
  * @returns {PaperType[]}
  */
@@ -83,7 +83,7 @@ function getQuestionIdList(questions) {
 }
 
 /**
- * 恢复题目原来的顺序
+ * 恢复文档原来的顺序
  * @param questions
  * @param questionsDetail
  * @returns {{}}

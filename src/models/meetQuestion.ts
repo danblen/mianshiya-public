@@ -1,7 +1,7 @@
 import type { SimpleUser } from '@/models/user';
 
 /**
- * 遇到题目类型
+ * 遇到文档类型
  */
 export interface MeetQuestionType {
   _id: string;
@@ -13,7 +13,7 @@ export interface MeetQuestionType {
 }
 
 /**
- * 遇到题目类型（封装用户信息）
+ * 遇到文档类型（封装用户信息）
  */
 export interface MeetQuestionUserType extends MeetQuestionType {
   userInfo: SimpleUser[];

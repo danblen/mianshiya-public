@@ -5,7 +5,7 @@ const { isAdminUser } = require('../../../utils/bUtils');
 const db = app.database();
 
 /**
- * 删除题目
+ * 删除文档
  *
  * @param event
  * @param context
@@ -21,7 +21,7 @@ exports.main = async (event, context) => {
   // 获取当前登录用户
   const currentUser = await getLoginUser(context);
 
-  // 仅题目所有者和管理员可操作
+  // 仅文档所有者和管理员可操作
   const originPaper = await db
     .collection('paper')
     .where({

@@ -5,7 +5,7 @@ const { validTags } = require('../../tag/tagService');
 const db = app.database();
 
 /**
- * 更新遇到题目
+ * 更新遇到文档
  * @param event
  * @param context
  * @return {Promise<boolean|*>}
@@ -24,7 +24,7 @@ exports.main = async (event, context) => {
   // 获取当前登录用户
   const currentUser = await getLoginUser(context);
 
-  // 仅遇到题目所有者和管理员可更新
+  // 仅遇到文档所有者和管理员可更新
   const originMeetQuestion = await db
     .collection('meetQuestion')
     .where({

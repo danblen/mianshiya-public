@@ -6,7 +6,7 @@ const app = cloud.init({
 const db = app.database();
 
 /**
- * 删除题目
+ * 删除文档
  *
  * @param event
  * @param context
@@ -37,7 +37,7 @@ exports.main = async (event, context) => {
     return false;
   }
 
-  // 原题目
+  // 原文档
   const originQuestion = await db
     .collection('question')
     .where({
@@ -56,7 +56,7 @@ exports.main = async (event, context) => {
   if (currentUser.authority && currentUser.authority.includes('admin')) {
     canDelete = true;
   }
-  // 如果是题目的创建者，并且题目不属于已发布状态，可删除
+  // 如果是文档的创建者，并且文档不属于已发布状态，可删除
   if (originQuestion.userId === currentUser._id && originQuestion.reviewStatus !== 1) {
     canDelete = true;
   }

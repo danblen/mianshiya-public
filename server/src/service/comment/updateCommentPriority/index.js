@@ -63,13 +63,13 @@ exports.main = async (event, context) => {
       .get()
       .then(({ data }) => data);
     if (!question) {
-      throw new Error('题目不存在');
+      throw new Error('文档不存在');
     }
 
     let tempRes;
-    // 要设置为参考解析，需要更新题目的解析字段
+    // 要设置为参考解析，需要更新文档的解析字段
     if (priority === 9999) {
-      // 更新题目解析
+      // 更新文档解析
       tempRes = await transaction.collection('question').doc(questionId).update({
         reference: comment.content,
         referenceCommentId: commentId,
@@ -126,8 +126,8 @@ exports.main = async (event, context) => {
         {
           toUserId: comment.userId,
           title: '您的回答被精选',
-          content: `您在题目 <a href="${questionCommentDetailLink}" target="_blank">${questionTitle}</a> 下的回答被精选`,
-          mailContent: `您在题目 <a href="${questionCommentDetailLinkFull}" target="_blank">${questionTitle}</a> 下的回答被精选`,
+          content: `您在文档 <a href="${questionCommentDetailLink}" target="_blank">${questionTitle}</a> 下的回答被精选`,
+          mailContent: `您在文档 <a href="${questionCommentDetailLinkFull}" target="_blank">${questionTitle}</a> 下的回答被精选`,
         },
         context,
       );
@@ -136,8 +136,8 @@ exports.main = async (event, context) => {
         {
           toUserId: comment.userId,
           title: '您的回答被设为参考',
-          content: `您在题目 <a href="${questionCommentDetailLink}" target="_blank">${questionTitle}</a> 下的回答被设为参考`,
-          mailContent: `您在题目 <a href="${questionCommentDetailLinkFull}" target="_blank">${questionTitle}</a> 下的回答被设为参考`,
+          content: `您在文档 <a href="${questionCommentDetailLink}" target="_blank">${questionTitle}</a> 下的回答被设为参考`,
+          mailContent: `您在文档 <a href="${questionCommentDetailLinkFull}" target="_blank">${questionTitle}</a> 下的回答被设为参考`,
         },
         context,
       );

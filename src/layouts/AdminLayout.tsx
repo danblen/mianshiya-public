@@ -63,7 +63,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = (props) => {
         logo={SYSTEM_LOGO}
         {...props}
         {...defaultSettings}
-        title="面试鸭后台"
+        title="在线文档后台"
         onMenuHeaderClick={() => history.push('/')}
         menuItemRender={(menuItemProps, defaultDom) => {
           if (menuItemProps.isUrl || !menuItemProps.path) {

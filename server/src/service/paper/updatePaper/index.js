@@ -34,7 +34,7 @@ exports.main = async (event, context) => {
   // 获取当前登录用户
   const currentUser = await getLoginUser(context);
 
-  // 仅题目所有者和管理员可更新
+  // 仅文档所有者和管理员可更新
   const originPaper = await db
     .collection('paper')
     .where({

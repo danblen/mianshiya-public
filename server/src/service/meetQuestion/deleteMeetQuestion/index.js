@@ -6,7 +6,7 @@ const db = app.database();
 const _ = db.command;
 
 /**
- * 删除遇到题目
+ * 删除遇到文档
  *
  * @param event
  * @param context
@@ -22,7 +22,7 @@ exports.main = async (event, context) => {
   // 获取当前登录用户
   const currentUser = await getLoginUser(context);
 
-  // 仅遇到题目所有者和管理员可操作
+  // 仅遇到文档所有者和管理员可操作
   const originMeetQuestion = await db
     .collection('meetQuestion')
     .where({
@@ -47,7 +47,7 @@ exports.main = async (event, context) => {
       _updateTime: new Date(),
     });
     if (res.updated > 0) {
-      // 题目遇到题目数 -1
+      // 文档遇到文档数 -1
       await updateQuestionMeetQuestionNum(transaction, originMeetQuestion.questionId, -1);
     }
     await transaction.commit();
@@ -60,7 +60,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 更新题目遇到题目数
+ * 更新文档遇到文档数
  * @param transaction
  * @param questionId
  * @param num

@@ -18,7 +18,7 @@ interface TagTabsProps {
 const TagTabList: React.FC<TagTabsProps> = (props) => {
   const { onTabClick, activeKey } = props;
   const [list, setList] = useState<string[]>([]);
-  const { tagsMap } = useModel('tag');
+  // const { tagsMap } = useModel('tag');
   const { initialState } = useModel('@@initialState');
   const { currentUser = {} as CurrentUser } = initialState || {};
 
@@ -28,16 +28,16 @@ const TagTabList: React.FC<TagTabsProps> = (props) => {
     if (interests && interests.length > 0) {
       tagList = interests;
     } else {
-      tagList = tagsMap.hotTags;
+      // tagList = tagsMap.hotTags;
     }
     if (tagList) {
       setList(tagList);
     }
   };
 
-  useEffect(() => {
-    loadData();
-  }, [currentUser, tagsMap]);
+  // useEffect(() => {
+  //   loadData();
+  // }, [currentUser, tagsMap]);
 
   // 补充菜单
   const allList = [...EXTRA_TAG_LIST, ...list];

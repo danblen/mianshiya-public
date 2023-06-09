@@ -18,23 +18,23 @@ export interface TagsMapType {
 }
 
 
-export default function useTagModel() {
-  const [tagsMap, setTagsMap] = useState<TagsMapType>( {
-    hotTags: [],
-    groupTags: [],
-    allTags: [],
-    categoryTagsMap: {},
-  })
+// export default function useTagModel() {
+//   const [tagsMap, setTagsMap] = useState<TagsMapType>( {
+//     hotTags: [],
+//     groupTags: [],
+//     allTags: [],
+//     categoryTagsMap: {},
+//   })
 
-  const fetchTagsMap = useCallback(async () => {
-    if (tagsMap.allTags.length === 0) {
-      const result = await getTagsMap();
-      setTagsMap(result);
-    }
-  }, [])
+//   const fetchTagsMap = useCallback(async () => {
+//     if (tagsMap.allTags.length === 0) {
+//       const result = await getTagsMap();
+//       setTagsMap(result);
+//     }
+//   }, [])
 
-  return {
-    tagsMap,
-    fetchTagsMap,
-  }
-}
+//   return {
+//     tagsMap,
+//     fetchTagsMap,
+//   }
+// }

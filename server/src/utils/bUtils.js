@@ -31,7 +31,7 @@ const isAdminUser = (user) => {
 };
 
 /**
- * 获取题目的显示标题
+ * 获取文档的显示标题
  * @param question
  */
 const getQuestionTitle = (question) => {
@@ -47,7 +47,7 @@ const getQuestionTitle = (question) => {
 };
 
 /**
- * 获取题目详情页链接
+ * 获取文档详情页链接
  * @param question
  * @param full 是否为完整链接
  * @returns {string}
@@ -60,7 +60,7 @@ const getQuestionDetailLink = (question, full = false) => {
 };
 
 /**
- * 获取题目回答详情页链接
+ * 获取文档回答详情页链接
  * @param questionId
  * @param commentId
  * @param full 是否为完整链接

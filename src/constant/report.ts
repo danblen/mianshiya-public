@@ -3,7 +3,7 @@
  */
 export const REPORT_TYPE_MAP = {
   0: {
-    text: '题目',
+    text: '文档',
   },
   1: {
     text: '用户',

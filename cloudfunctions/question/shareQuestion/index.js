@@ -7,7 +7,7 @@ const db = app.database();
 const _ = db.command;
 
 /**
- * 题目分享数 +1
+ * 文档分享数 +1
  * @param event
  * @param context
  * @return {Promise<*>}

@@ -3,17 +3,17 @@ export default [
     path: '/',
     layout: false,
     routes: [
-      {
-        path: '/user',
-        component: '../layouts/UserLayout',
-        routes: [
-          {
-            name: '登录',
-            path: '/user/login',
-            component: './User/Login',
-          },
-        ],
-      },
+      // {
+      //   path: '/user',
+      //   component: '../layouts/UserLayout',
+      //   routes: [
+      //     {
+      //       name: '登录',
+      //       path: '/user/login',
+      //       component: './User/Login',
+      //     },
+      //   ],
+      // },
       {
         path: '/op',
         component: '../layouts/AdminLayout',
@@ -24,7 +24,7 @@ export default [
             redirect: 'question',
           },
           {
-            name: '题目管理',
+            name: '文档管理',
             path: './question',
             component: './OpCenter/ManageQuestion',
           },
@@ -68,7 +68,7 @@ export default [
             redirect: 'question',
           },
           {
-            name: '题目管理',
+            name: '文档管理',
             path: './question',
             component: './OpCenter/ManageQuestion',
           },
@@ -108,7 +108,7 @@ export default [
                 wrappers: ['@/wrappers/auth'],
               },
               {
-                name: '我的题目',
+                name: '我的文档',
                 path: './question',
                 component: './AccountCenter/MyAddQuestions',
                 wrappers: ['@/wrappers/auth'],
@@ -134,12 +134,12 @@ export default [
             ],
           },
           {
-            name: '题目大全',
+            name: '文档大全',
             path: '/questions',
             component: './Questions',
           },
           {
-            name: '题目大全',
+            name: '文档大全',
             path: '/tag/:key',
             component: './Questions',
           },
@@ -156,7 +156,7 @@ export default [
           {
             name: '创建试卷',
             path: '/addPaper',
-            component: './addPaper',
+            component: './AddPaper',
             wrappers: ['@/wrappers/auth'],
           },
           {
@@ -170,19 +170,19 @@ export default [
             component: './Tags',
           },
           {
-            name: '题目详情',
+            name: '文档详情',
             path: '/qd/:id',
             component: './QuestionDetail',
             hideInMenu: true,
           },
           {
-            name: '题目回答详情',
+            name: '文档回答详情',
             path: '/qd/:id/c/:commentId',
             component: './QuestionDetail',
             hideInMenu: true,
           },
           {
-            name: '题目回答详情',
+            name: '文档回答详情',
             path: '/cd/:commentId',
             component: './QuestionDetail',
             hideInMenu: true,
@@ -200,7 +200,7 @@ export default [
             hideInMenu: true,
           },
           {
-            name: '上传题目',
+            name: '上传文档',
             path: '/addQuestion',
             component: './AddQuestion',
             wrappers: ['@/wrappers/auth'],

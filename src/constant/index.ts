@@ -49,7 +49,7 @@ export const YUPI_QR_CODE = `${STORAGE_HOST}/yupi_qrcode.png`;
 /**
  * 标语
  */
-export const SLOGAN = '助你成为面试达人';
+export const SLOGAN = '助你成为文档达人';
 
 /**
  * 用户搜索历史  LocalStorage 键名

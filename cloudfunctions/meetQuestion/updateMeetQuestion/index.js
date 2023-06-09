@@ -6,7 +6,7 @@ const app = cloud.init({
 const db = app.database();
 
 /**
- * 更新遇到题目
+ * 更新遇到文档
  * @param event
  * @param context
  * @return {Promise<boolean|*>}
@@ -39,7 +39,7 @@ exports.main = async (event, context) => {
     return false;
   }
 
-  // 仅遇到题目所有者和管理员可更新
+  // 仅遇到文档所有者和管理员可更新
   const originMeetQuestion = await db
     .collection('meetQuestion')
     .where({
@@ -55,7 +55,7 @@ exports.main = async (event, context) => {
     return false;
   }
   const updateData = {
-    tags
+    tags,
   };
   return await updateMeetQuestion(db, meetQuestionId, updateData);
 };

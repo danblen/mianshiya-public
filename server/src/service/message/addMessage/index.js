@@ -1,5 +1,5 @@
 const app = require('../../../app');
-const cheerio = require("cheerio");
+const cheerio = require('cheerio');
 
 const db = app.database();
 const sendMail = require('../../common/sendEmail/index').main;
@@ -37,7 +37,7 @@ exports.main = async (event, context) => {
     sendMail(
       {
         to: user.email,
-        subject: `【面试鸭】${mailTitle}`,
+        subject: `【在线文档】${mailTitle}`,
         content: mailContent ?? content,
       },
       context,

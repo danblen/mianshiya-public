@@ -8,7 +8,7 @@ const { getLoginUser } = require('../../user/userService');
 const { validTags } = require('../../tag/tagService');
 
 /**
- * 创建题目
+ * 创建文档
  * @param event
  * @param context
  * @return {Promise<*|boolean>}
@@ -29,19 +29,19 @@ exports.main = async (event, context) => {
   if (!validTags(tags)) {
     return false;
   }
-  // 校验题目详情，如果不包含任何文本，直接返回
+  // 校验文档详情，如果不包含任何文本，直接返回
   if (!cheerio.load(detail).text().trim()) {
     return false;
   }
   detail = xss(detail.trim());
-  // 校验题目解析，
+  // 校验文档解析，
   if (reference !== undefined) {
     reference = xss(reference.trim());
   }
   // 获取当前登录用户
   const currentUser = await getLoginUser(context);
 
-  // 同一用户每天只能上传 50 道题目
+  // 同一用户每天只能上传 50 道文档
   const yesterday = new Date(new Date().getTime() - 24 * 60 * 60 * 1000);
   const condition = {
     userId: currentUser._id,

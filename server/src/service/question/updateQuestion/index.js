@@ -8,7 +8,7 @@ const { isAdminUser } = require('../../../utils/bUtils');
 const { validTags } = require('../../tag/tagService');
 
 /**
- * 更新题目
+ * 更新文档
  * @param event
  * @param context
  * @return {Promise<boolean|*>}
@@ -52,7 +52,7 @@ exports.main = async (event, context) => {
   // 获取当前登录用户
   const currentUser = await getLoginUser(context);
 
-  // 原题目
+  // 原文档
   const originQuestion = await db
     .collection('question')
     .where({
@@ -71,7 +71,7 @@ exports.main = async (event, context) => {
   if (isAdminUser(currentUser)) {
     canOp = true;
   }
-  // 如果是题目的创建者，可操作
+  // 如果是文档的创建者，可操作
   if (originQuestion.userId === currentUser._id) {
     canOp = true;
   }

@@ -6,7 +6,7 @@ const app = cloud.init({
 const db = app.database();
 
 /**
- * 删除题目
+ * 删除文档
  *
  * @param event
  * @param context
@@ -37,7 +37,7 @@ exports.main = async (event, context) => {
     return false;
   }
 
-  // 仅题目所有者和管理员可操作
+  // 仅文档所有者和管理员可操作
   const originPaper = await db
     .collection('paper')
     .where({

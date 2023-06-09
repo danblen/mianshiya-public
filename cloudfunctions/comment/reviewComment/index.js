@@ -73,7 +73,7 @@ exports.main = async (event, context) => {
 
     // 其他状态转通过
     if (comment.reviewStatus !== 1 && reviewStatus === 1) {
-      // 题目评论数 + 1
+      // 文档评论数 + 1
       await updateQuestionCommentNum(transaction, questionId, 1);
       const userId = comment.userId;
       const res1 = await app
@@ -91,7 +91,7 @@ exports.main = async (event, context) => {
       }
     } else if (comment.reviewStatus === 1) {
       // 通过改为其他状态
-      // 题目评论数 -1
+      // 文档评论数 -1
       await updateQuestionCommentNum(transaction, questionId, -1);
     }
     await transaction.commit();
@@ -103,7 +103,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 更新题目回答数
+ * 更新文档回答数
  * @param transaction
  * @param questionId
  * @param num

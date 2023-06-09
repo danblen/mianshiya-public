@@ -1,7 +1,7 @@
 {
   "name": "addQuestion",
   "version": "1.0.0",
-  "description": "创建题目",
+  "description": "创建文档",
   "main": "index.js",
   "scripts": {},
   "author": "",

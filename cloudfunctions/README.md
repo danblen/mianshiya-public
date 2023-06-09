@@ -1,7 +1,7 @@
-# 面试鸭后端云函数
+# 在线文档后端云函数
 
 > ⚠️ 前期使用 serverless 后端架构，代码量多了后改为完整 server 部署，所以本目录下代码逻辑可能不是最新。
-> 
+>
 > 请先阅读 [云函数文档](https://docs.cloudbase.net/cloud-function/introduce.html) 以了解云函数
 
 ## 开通云开发
@@ -42,7 +42,7 @@ tcb fn deploy <functionName> --dir <functionPath>
 
 > 涉及项目机密，仅对 [星球内](https://docs.qq.com/doc/DUG93dVNHbVZjZXpo/) 同学公开
 
-题目表 question_v1
+文档表 question_v1
 
 ### 搜索示例
 
@@ -194,7 +194,7 @@ tcb fn deploy searchComments --dir cloudfunctions/comment/searchComments --force
 
 tcb fn deploy thumbUpComment --dir cloudfunctions/comment/thumbUpComment --force
 
-### 题目修改
+### 文档修改
 
 tcb fn deploy addQuestionEdit --dir cloudfunctions/questionEdit/addQuestionEdit --force
 
@@ -214,8 +214,7 @@ tcb fn deploy deleteReply --dir cloudfunctions/reply/deleteReply --force
 
 tcb fn deploy searchReplies --dir cloudfunctions/reply/searchReplies --force
 
-
-### 遇到题目
+### 遇到文档
 
 tcb fn deploy addMeetQuestion --dir cloudfunctions/meetQuestion/addMeetQuestion --force
 

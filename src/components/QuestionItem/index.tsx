@@ -14,11 +14,7 @@ import type { QuestionType } from '@/models/question';
 import { deleteQuestion, favourQuestion } from '@/services/question';
 import type { CurrentUser } from '@/models/user';
 import TagList from '@/components/TagList';
-import {
-  getQuestionDetailLink,
-  getQuestionTitle,
-  toLoginPage,
-} from '@/utils/businessUtils';
+import { getQuestionDetailLink, getQuestionTitle, toLoginPage } from '@/utils/businessUtils';
 import { useModel } from '@@/plugin-model/useModel';
 import { getCurrentUser } from '@/services/user';
 import { QUESTION_DIFFICULTY_ENUM, QUESTION_TYPE_ENUM } from '@/constant/question';
@@ -46,7 +42,7 @@ interface QuestionItemProps {
 }
 
 /**
- * 单个题目展示
+ * 单个文档展示
  *
  * @param props
  * @constructor

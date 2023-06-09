@@ -6,12 +6,12 @@ import { searchQuestionsByPage } from '@/services/question';
 import reviewStatusEnum from '@/constant/reviewStatusEnum';
 
 interface SimilarQuestionsProps {
-  // 参照题目
+  // 参照文档
   question?: QuestionType;
 }
 
 /**
- * 相似题目
+ * 相似文档
  * @param props
  * @constructor
  */

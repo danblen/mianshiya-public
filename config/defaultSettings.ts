@@ -12,7 +12,7 @@ const Settings: LayoutSettings & {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: '面试鸭',
+  title: '在线文档',
   pwa: false,
   iconfontUrl: '',
 };

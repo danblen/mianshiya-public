@@ -19,7 +19,7 @@ interface AddQuestionEditModalProps {
 }
 
 /**
- * 添加或修改题目编辑
+ * 添加或修改文档编辑
  *
  * @param props
  * @constructor
@@ -105,7 +105,7 @@ const AddQuestionEditModal: React.FC<AddQuestionEditModalProps> = (props) => {
 
   return (
     <Modal
-      title="修改题目解析"
+      title="修改文档解析"
       visible={visible}
       footer={null}
       destroyOnClose
@@ -125,12 +125,12 @@ const AddQuestionEditModal: React.FC<AddQuestionEditModalProps> = (props) => {
           <TextArea placeholder="请输入本次修改的介绍或原因" />
         </Form.Item>
         <Form.Item
-          label="题目解析"
+          label="文档解析"
           name="reference"
           rules={[
             {
               required: true,
-              message: '请输入题目解析',
+              message: '请输入文档解析',
             },
           ]}
         >

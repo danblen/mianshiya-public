@@ -7,7 +7,7 @@ import type { PaperSearchParams } from '@/services/paper';
 import { Link } from '@umijs/preset-dumi/lib/theme';
 import type { TagType } from '@/models/tag';
 import AddMeetQuestionModal from '@/components/AddMeetQuestionModal';
-import { DEFAULT_AVATAR } from "@/constant";
+import { DEFAULT_AVATAR } from '@/constant';
 import './style.less';
 
 interface ListMeetQuestionModalProps {
@@ -22,7 +22,7 @@ const DEFAULT_PAGE_PARAMS = {
 };
 
 /**
- * 遇到题目列表弹窗
+ * 遇到文档列表弹窗
  *
  * @param props
  * @constructor
@@ -88,10 +88,15 @@ const ListMeetQuestionModal: React.FC<ListMeetQuestionModalProps> = (props) => {
         title={
           <Row justify="space-between">
             <div>{question.meetNum ?? 0}人遇到</div>
-            <Button type="primary" size="small" style={{ marginRight: 32 }} onClick={() => {
-              doCancel();
-              setAddMeetModalVisible(true);
-            }}>
+            <Button
+              type="primary"
+              size="small"
+              style={{ marginRight: 32 }}
+              onClick={() => {
+                doCancel();
+                setAddMeetModalVisible(true);
+              }}
+            >
               我遇到过
             </Button>
           </Row>
@@ -123,7 +128,12 @@ const ListMeetQuestionModal: React.FC<ListMeetQuestionModalProps> = (props) => {
             return (
               <List.Item>
                 <List.Item.Meta
-                  avatar={<Avatar size="large" src={meetQuestion.userInfo[0].avatarUrl || DEFAULT_AVATAR} />}
+                  avatar={
+                    <Avatar
+                      size="large"
+                      src={meetQuestion.userInfo[0].avatarUrl || DEFAULT_AVATAR}
+                    />
+                  }
                   title={meetQuestion.userInfo[0].nickName}
                   description={tagListView(meetQuestion.tags)}
                 />

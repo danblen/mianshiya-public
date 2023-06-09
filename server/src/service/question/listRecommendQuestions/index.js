@@ -5,7 +5,7 @@ const db = app.database();
 const _ = db.command;
 
 /**
- * 获取推荐题目列表
+ * 获取推荐文档列表
  * @param event
  * @param context
  * @return {Promise<*|*[]|*>}

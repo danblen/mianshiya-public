@@ -6,7 +6,7 @@ const _ = db.command;
 const $ = db.command.aggregate;
 
 /**
- * 搜索遇到题目（支持分页）
+ * 搜索遇到文档（支持分页）
  * @param event
  * @param context
  * @return {Promise<{total: number, data: []}|{total: *, data: *}>}

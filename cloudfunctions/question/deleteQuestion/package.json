@@ -1,7 +1,7 @@
 {
   "name": "deleteQuestion",
   "version": "1.0.0",
-  "description": "删除题目",
+  "description": "删除文档",
   "main": "index.js",
   "scripts": {},
   "author": "",

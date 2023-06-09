@@ -8,7 +8,7 @@ const server = new CloudBaseRunServer();
 server.setRoute('/login', require('./service/login/index.js').main);
 server.setRoute('/logout', require('./service/logout/index.js').main);
 
-// 题目
+// 文档
 server.setRoute('/question/add', require('./service/question/addQuestion/index.js').main);
 server.setRoute('/question/delete', require('./service/question/deleteQuestion/index.js').main);
 server.setRoute('/question/update', require('./service/question/updateQuestion/index.js').main);
@@ -32,13 +32,16 @@ server.setRoute(
 server.setRoute('/comment/add', require('./service/comment/addComment/index.js').main);
 server.setRoute('/comment/delete', require('./service/comment/deleteComment/index.js').main);
 server.setRoute('/comment/update', require('./service/comment/updateComment/index.js').main);
-server.setRoute('/comment/update/priority', require('./service/comment/updateCommentPriority/index.js').main);
+server.setRoute(
+  '/comment/update/priority',
+  require('./service/comment/updateCommentPriority/index.js').main,
+);
 server.setRoute('/comment/get', require('./service/comment/getComment/index.js').main);
 server.setRoute('/comment/search', require('./service/comment/searchComments/index.js').main);
 server.setRoute('/comment/review', require('./service/comment/reviewComment/index.js').main);
 server.setRoute('/comment/thumb-up', require('./service/comment/thumbUpComment/index.js').main);
 
-// 遇到题目
+// 遇到文档
 server.setRoute(
   '/meet-question/add',
   require('./service/meetQuestion/addMeetQuestion/index.js').main,
@@ -85,10 +88,10 @@ server.setRoute(
 );
 
 // 标签
-server.setRoute('/tag/get/map', require('./service/tag/getTagsMap/index.js').main);
+// server.setRoute('/tag/get/map', require('./service/tag/getTagsMap/index.js').main);
 
 // 用户
-server.setRoute('/user/current', require('./service/user/getCurrentUser/index.js').main);
+// server.setRoute('/user/current', require('./service/user/getCurrentUser/index.js').main);
 server.setRoute('/user/simple', require('./service/user/getSimpleUser/index.js').main);
 server.setRoute('/user/update', require('./service/user/updateUser/index.js').main);
 server.setRoute('/user/get/rank', require('./service/user/getUserRank/index.js').main);

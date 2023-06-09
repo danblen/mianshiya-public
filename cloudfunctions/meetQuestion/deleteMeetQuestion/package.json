@@ -1,7 +1,7 @@
 {
   "name": "deleteMeetQuestion",
   "version": "1.0.0",
-  "description": "删除遇到题目",
+  "description": "删除遇到文档",
   "main": "index.js",
   "scripts": {},
   "author": "",

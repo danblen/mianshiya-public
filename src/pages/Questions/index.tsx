@@ -17,7 +17,7 @@ interface QuestionsProps {
 }
 
 /**
- * 题目大全页
+ * 文档大全页
  *
  * @param props
  * @constructor

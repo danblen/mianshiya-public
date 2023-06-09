@@ -47,7 +47,7 @@ exports.main = async (event, context) => {
       _updateTime: new Date(),
     });
     if (res.updated > 0) {
-      // 题目评论数 -1
+      // 文档评论数 -1
       await updateQuestionCommentNum(transaction, originComment.questionId, -1);
     }
     await transaction.commit();
@@ -60,7 +60,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 更新题目回答数
+ * 更新文档回答数
  * @param transaction
  * @param questionId
  * @param num

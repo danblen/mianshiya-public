@@ -39,7 +39,7 @@ exports.main = async (event, context) => {
         name: 'sendEmail',
         data: {
           to: user.email,
-          subject: `【面试鸭】${title}`,
+          subject: `【在线文档】${title}`,
           content: content,
         },
       })

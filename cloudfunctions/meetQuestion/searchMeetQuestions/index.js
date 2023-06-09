@@ -9,18 +9,13 @@ const _ = db.command;
 const $ = db.command.aggregate;
 
 /**
- * 搜索遇到题目（支持分页）
+ * 搜索遇到文档（支持分页）
  * @param event
  * @param context
  * @return {Promise<{total: number, data: []}|{total: *, data: *}>}
  */
 exports.main = async (event, context) => {
-  const {
-    userId,
-    questionId,
-    pageSize = 10,
-    pageNum = 1,
-  } = event;
+  const { userId, questionId, pageSize = 10, pageNum = 1 } = event;
 
   const conditions = { isDelete: false, questionId, userId };
 

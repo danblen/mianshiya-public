@@ -8,7 +8,7 @@ const xss = require('xss');
 const cheerio = require('cheerio');
 
 /**
- * 更新题目
+ * 更新文档
  * @param event
  * @param context
  * @return {Promise<boolean|*>}
@@ -18,7 +18,7 @@ exports.main = async (event, context) => {
   if (!questionId || !question) {
     return;
   }
-  
+
   let { name, detail, tags, difficulty, type, params, reference } = question;
   if (name !== undefined && (name.length < 1 || name.length > 100)) {
     return false;
@@ -66,7 +66,7 @@ exports.main = async (event, context) => {
     return false;
   }
 
-  // 原题目
+  // 原文档
   const originQuestion = await db
     .collection('question')
     .where({
@@ -85,7 +85,7 @@ exports.main = async (event, context) => {
   if (currentUser.authority && currentUser.authority.includes('admin')) {
     canOp = true;
   }
-  // 如果是题目的创建者，可操作
+  // 如果是文档的创建者，可操作
   if (originQuestion.userId === currentUser._id) {
     canOp = true;
   }

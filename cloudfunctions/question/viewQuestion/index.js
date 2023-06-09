@@ -9,7 +9,7 @@ const FORBIDDEN_CODE = -403;
 const BLACK_IP_LIST = ['xxx'];
 
 /**
- * 浏览题目
+ * 浏览文档
  * @param event
  * @param context
  * @return {Promise<boolean|*>}

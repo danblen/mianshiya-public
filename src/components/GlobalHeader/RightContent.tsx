@@ -22,7 +22,7 @@ const GlobalHeaderRight: React.FC<GlobalHeaderRightProps> = () => {
     <Menu>
       <Menu.Item key="1">
         <Link to="/addQuestion" target="_blank">
-          上传题目
+          上传文档
         </Link>
       </Menu.Item>
       <Menu.Item key="2">
@@ -35,10 +35,10 @@ const GlobalHeaderRight: React.FC<GlobalHeaderRightProps> = () => {
 
   return (
     <div className={styles.right}>
-      <div style={{ width: '40vw' }}>
+      <div style={{ width: '20vw' }}>
         <HeaderSearch
           value={searchText}
-          placeholder="全站搜索面试题目"
+          placeholder="全站搜索文档文档"
           onChange={(value) => setSearchText(value)}
         />
       </div>

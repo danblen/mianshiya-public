@@ -15,7 +15,7 @@ interface QuestionDetailCardProps {
 }
 
 /**
- * 题目详细信息（只读，给试卷、题目详情等页面使用）
+ * 文档详细信息（只读，给试卷、文档详情等页面使用）
  * @param props
  * @constructor
  * @author liyupi

@@ -67,7 +67,7 @@ const submitFormLayout = {
 };
 
 /**
- * 添加或修改题目
+ * 添加或修改文档
  * @constructor
  */
 const AddQuestion: React.FC = () => {
@@ -90,7 +90,7 @@ const AddQuestion: React.FC = () => {
         return;
       }
       if (res.userId !== currentUser._id && !access.canAdmin) {
-        message.error('只能修改自己的题目');
+        message.error('只能修改自己的文档');
         setDisabled(true);
         return;
       }
@@ -98,7 +98,7 @@ const AddQuestion: React.FC = () => {
     }
   };
 
-  // 修改题目
+  // 修改文档
   useEffect(() => {
     loadData();
   }, [questionId, currentUser]);
@@ -109,7 +109,7 @@ const AddQuestion: React.FC = () => {
       return;
     }
     if (!BraftEditor.createEditorState(values.detail).toText().trim()) {
-      message.error('请输入题目信息');
+      message.error('请输入文档信息');
       return;
     }
     if (!BraftEditor.createEditorState(values.reference).toText().trim()) {
@@ -160,7 +160,7 @@ const AddQuestion: React.FC = () => {
     });
   };
 
-  // 题目类型选项组
+  // 文档类型选项组
   const typeRadioGroupOptions = Object.keys(QUESTION_TYPE_ENUM).map((key) => {
     return {
       label: QUESTION_TYPE_ENUM[key],
@@ -172,10 +172,10 @@ const AddQuestion: React.FC = () => {
     <Row gutter={[24, 24]}>
       <Col lg={16} sm={24}>
         <Card
-          title="上传题目"
+          title="上传文档"
           extra={
             <span>
-              欢迎分享面试题，
+              欢迎分享文档题，
               <a href="https://docs.qq.com/doc/DUGF6V0xKSG9Mamps" target="_blank" rel="noreferrer">
                 获取积分
               </a>
@@ -207,7 +207,7 @@ const AddQuestion: React.FC = () => {
               rules={[
                 {
                   required: true,
-                  message: '请选择题目类型',
+                  message: '请选择文档类型',
                 },
               ]}
             >
@@ -219,7 +219,7 @@ const AddQuestion: React.FC = () => {
               rules={[
                 {
                   required: true,
-                  message: '请选择题目难度',
+                  message: '请选择文档难度',
                 },
               ]}
             >
@@ -251,18 +251,18 @@ const AddQuestion: React.FC = () => {
               />
             </FormItem>
             <FormItem
-              label="题目"
+              label="文档"
               name="detail"
               rules={[
                 {
                   required: true,
-                  message: '请完善题目',
+                  message: '请完善文档',
                 },
               ]}
             >
               {/* @ts-ignore */}
               <RichTextEditor
-                placeholder="请输入题目内容，尽量准确清晰，不用刻意加粗"
+                placeholder="请输入文档内容，尽量准确清晰，不用刻意加粗"
                 onBlur={(_, __, editor) => {
                   // 相似检测
                   doSimilarSearch(editor.getText());
@@ -270,12 +270,12 @@ const AddQuestion: React.FC = () => {
               />
             </FormItem>
             {formValue.type === 1 ? (
-              <FormItem label="题目选项" name="params">
+              <FormItem label="文档选项" name="params">
                 <AddSingleOptions />
               </FormItem>
             ) : null}
             {formValue.type === 2 ? (
-              <FormItem label="题目选项" name="params">
+              <FormItem label="文档选项" name="params">
                 <AddMultipleOptions />
               </FormItem>
             ) : null}
@@ -284,7 +284,7 @@ const AddQuestion: React.FC = () => {
               <RichTextEditor placeholder="请输入参考题解，可不填" />
             </FormItem>
             <FormItem label="标题备注" name="name">
-              <Input placeholder="建议用题目考察要点命名，可不填" maxLength={100} allowClear />
+              <Input placeholder="建议用文档考察要点命名，可不填" maxLength={100} allowClear />
             </FormItem>
             <FormItem
               {...submitFormLayout}
@@ -306,11 +306,11 @@ const AddQuestion: React.FC = () => {
         </Card>
       </Col>
       <Col lg={8} xs={24}>
-        <Card title="相似题目（请勿重复上传）" bodyStyle={{ paddingTop: 12 }}>
+        <Card title="相似文档（请勿重复上传）" bodyStyle={{ paddingTop: 12 }}>
           {similarSearchParams?.name?.trim() ? (
             <QuestionList searchParams={similarSearchParams} />
           ) : (
-            <div>输入题目后将自动检测</div>
+            <div>输入文档后将自动检测</div>
           )}
         </Card>
       </Col>

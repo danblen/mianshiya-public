@@ -11,7 +11,7 @@ import { LEVEL_LIST } from '@/constant/level';
 import type { CurrentUser, SimpleUser } from '@/models/user';
 
 /**
- * 跳转至题目详情页
+ * 跳转至文档详情页
  * @param question
  * @param newWindow 是否新窗口打开
  */
@@ -40,7 +40,7 @@ export const toLoginPage = () => {
 };
 
 /**
- * 获取题目显示标题
+ * 获取文档显示标题
  * @param question
  */
 export const getQuestionTitle = (question?: QuestionType): string => {
@@ -56,7 +56,7 @@ export const getQuestionTitle = (question?: QuestionType): string => {
 };
 
 /**
- * 分享题目
+ * 分享文档
  */
 export const doShareQuestion = async (question?: QuestionType) => {
   // 复制到剪切板，分享数 +1
@@ -65,14 +65,16 @@ export const doShareQuestion = async (question?: QuestionType) => {
     if (questionTitle.length > 40) {
       questionTitle = questionTitle.substring(0, 40) + '...';
     }
-    copy(`我在面试鸭发现了这道题『 ${questionTitle} 』💎 快来看看 ${WEB_HOST}/qd/${question._id}`);
+    copy(
+      `我在在线文档发现了这道题『 ${questionTitle} 』💎 快来看看 ${WEB_HOST}/qd/${question._id}`,
+    );
     shareQuestion(question._id);
     message.success('链接已复制，感谢分享！');
   }
 };
 
 /**
- * 获得题目阅读文字
+ * 获得文档阅读文字
  * @param question
  * @param showReference
  * @param index 题号
@@ -88,7 +90,7 @@ export const getQuestionSpeakText = (
   if (index) {
     speakText = `第${index}题：${questionTitle} \n`;
   } else {
-    speakText = `题目：${questionTitle} \n`;
+    speakText = `文档：${questionTitle} \n`;
   }
   if (questionTitle != textQuestionDetail) {
     speakText += `描述：${textQuestionDetail} \n`;
@@ -112,7 +114,7 @@ export const getQuestionSpeakText = (
 };
 
 /**
- * 获取题目详情页链接
+ * 获取文档详情页链接
  * @param question
  * @returns {string}
  */

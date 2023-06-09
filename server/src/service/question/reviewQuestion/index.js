@@ -8,7 +8,7 @@ const addUserScore = require('../../userScore/addUserScore/index').main;
 const addMessage = require('../../message/addMessage/index').main;
 
 /**
- * 审核题目
+ * 审核文档
  * @param event
  * @param context
  * @return {Promise<boolean|number>}
@@ -27,7 +27,7 @@ exports.main = async (event, context) => {
   // 获取当前登录用户
   const currentUser = await getLoginUser(context);
 
-  // 原题目
+  // 原文档
   const originQuestion = await db
     .collection('question')
     .where({
@@ -47,7 +47,7 @@ exports.main = async (event, context) => {
   if (isAdminUser(currentUser)) {
     canOp = true;
   }
-  // 如果是题目的创建者，可操作
+  // 如果是文档的创建者，可操作
   if (originQuestion.userId === currentUser._id) {
     canOp = true;
   }
@@ -105,9 +105,9 @@ exports.main = async (event, context) => {
       await addMessage(
         {
           toUserId: userId,
-          title: '题目审核通过',
-          content: `您上传的题目 <a href="${questionDetailLink}" target="_blank">${questionTitle}</a> 已通过审核`,
-          mailContent: `您上传的题目 <a href="${questionDetailLinkFull}" target="_blank">${questionTitle}</a> 已通过审核`,
+          title: '文档审核通过',
+          content: `您上传的文档 <a href="${questionDetailLink}" target="_blank">${questionTitle}</a> 已通过审核`,
+          mailContent: `您上传的文档 <a href="${questionDetailLinkFull}" target="_blank">${questionTitle}</a> 已通过审核`,
         },
         context,
       );
@@ -115,11 +115,11 @@ exports.main = async (event, context) => {
       await addMessage(
         {
           toUserId: userId,
-          title: '题目审核拒绝',
-          content: `您上传的题目 <a href="${questionDetailLink}" target="_blank">${questionTitle}</a> 未通过审核，拒绝原因：${
+          title: '文档审核拒绝',
+          content: `您上传的文档 <a href="${questionDetailLink}" target="_blank">${questionTitle}</a> 未通过审核，拒绝原因：${
             reviewMessage ? reviewMessage : '无'
           }`,
-          mailContent: `您上传的题目 <a href="${questionDetailLinkFull}" target="_blank">${questionTitle}</a> 未通过审核，拒绝原因：${
+          mailContent: `您上传的文档 <a href="${questionDetailLinkFull}" target="_blank">${questionTitle}</a> 未通过审核，拒绝原因：${
             reviewMessage ? reviewMessage : '无'
           }`,
         },
@@ -136,7 +136,7 @@ exports.main = async (event, context) => {
 };
 
 /**
- * 修改题目
+ * 修改文档
  * @param transaction
  * @param reviewerId
  * @param questionId
